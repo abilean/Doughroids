@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 6c7d97a3b4b74434b9d6d5c4279c15fe
+timeCreated: 1508377559
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cube
+    100002: sprinkle
+    100004: sprinkle_001
+    100006: sprinkle_002
+    100008: sprinkle_003
+    100010: sprinkle_004
+    100012: sprinkle_005
+    100014: sprinkle_006
+    100016: sprinkle_007
+    100018: sprinkle_008
+    100020: sprinkle_009
+    100022: sprinkle_010
+    100024: sprinkle_011
+    100026: sprinkle_012
+    100028: sprinkle_013
+    100030: sprinkle_014
+    100032: //RootNode
+    100034: Torus
+    100036: Torus_001
+    400000: Cube
+    400002: sprinkle
+    400004: sprinkle_001
+    400006: sprinkle_002
+    400008: sprinkle_003
+    400010: sprinkle_004
+    400012: sprinkle_005
+    400014: sprinkle_006
+    400016: sprinkle_007
+    400018: sprinkle_008
+    400020: sprinkle_009
+    400022: sprinkle_010
+    400024: sprinkle_011
+    400026: sprinkle_012
+    400028: sprinkle_013
+    400030: sprinkle_014
+    400032: //RootNode
+    400034: Torus
+    400036: Torus_001
+    2300000: Cube
+    2300002: sprinkle
+    2300004: sprinkle_001
+    2300006: sprinkle_002
+    2300008: sprinkle_003
+    2300010: sprinkle_004
+    2300012: sprinkle_005
+    2300014: sprinkle_006
+    2300016: sprinkle_007
+    2300018: sprinkle_008
+    2300020: sprinkle_009
+    2300022: sprinkle_010
+    2300024: sprinkle_011
+    2300026: sprinkle_012
+    2300028: sprinkle_013
+    2300030: sprinkle_014
+    2300032: Torus
+    2300034: Torus_001
+    3300000: Cube
+    3300002: sprinkle
+    3300004: sprinkle_001
+    3300006: sprinkle_002
+    3300008: sprinkle_003
+    3300010: sprinkle_004
+    3300012: sprinkle_005
+    3300014: sprinkle_006
+    3300016: sprinkle_007
+    3300018: sprinkle_008
+    3300020: sprinkle_009
+    3300022: sprinkle_010
+    3300024: sprinkle_011
+    3300026: sprinkle_012
+    3300028: sprinkle_013
+    3300030: sprinkle_014
+    3300032: Torus
+    3300034: Torus_001
+    4300000: Cube
+    4300002: Torus
+    4300004: sprinkle
+    4300006: sprinkle_014
+    4300008: sprinkle_013
+    4300010: sprinkle_012
+    4300012: sprinkle_011
+    4300014: sprinkle_010
+    4300016: sprinkle_009
+    4300018: sprinkle_008
+    4300020: sprinkle_007
+    4300022: sprinkle_006
+    4300024: sprinkle_005
+    4300026: sprinkle_004
+    4300028: sprinkle_003
+    4300030: sprinkle_002
+    4300032: sprinkle_001
+    4300034: Torus_001
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
