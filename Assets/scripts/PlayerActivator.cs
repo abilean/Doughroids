@@ -8,12 +8,12 @@ public class PlayerActivator : MonoBehaviour {
     /// The player
     /// </summary>
     [SerializeField]
-    private GameObject _player;
+    private GameObject _playerPrefab;
+
+
 
     private void Awake()
     {
-        if(_player == null)
-            _player = this.transform.GetChild(0).gameObject;
 
         GameManager.Instance.OnLevelChanged += HandleChangeLevel;
     }
@@ -33,15 +33,25 @@ public class PlayerActivator : MonoBehaviour {
     {
         if(lvl == 0)
         {
-            _player.SetActive(false);
+            DestroyAllChildren();
         }
-        else
+        else if(lvl == 1)
         {
-            _player.transform.localPosition = Vector3.zero;
-            _player.SetActive(true);
-
+            DestroyAllChildren();
+            GameObject player = Instantiate(_playerPrefab, this.transform.position, this.transform.rotation, this.transform);
+            GameManager.Instance.CreatedNewPlayer(player);
         }
     }
+
+
+    private void DestroyAllChildren()
+    {
+        foreach(Transform child in this.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
+
 
     public void OnDestroy()
     {

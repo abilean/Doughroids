@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class PoolPreparer : MonoBehaviour
 {
@@ -35,6 +38,7 @@ public class PoolPreparer : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
     private void OnValidate()
     {
         List<GameObject> prefabsToRemove = new List<GameObject>();
@@ -62,4 +66,7 @@ public class PoolPreparer : MonoBehaviour
             .Where(t => t != null && prefabsToRemove.Contains(t) == false)
             .ToArray();
     }
+
+#endif
+
 }

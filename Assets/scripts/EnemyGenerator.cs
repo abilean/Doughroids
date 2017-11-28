@@ -21,6 +21,7 @@ public class EnemyGenerator : MonoBehaviour {
     [SerializeField]
     private DonutController _enemyPrefab;
 
+
     /// <summary>
     /// pool for generating prefabs
     /// </summary>
@@ -72,7 +73,6 @@ public class EnemyGenerator : MonoBehaviour {
         if(level == 0)
         {
             MakeEnemies(8);
-            Debug.Log("In EGenerator, made enemy's, count = " + this._donutCount);
             _currentState = State.Waiting;
             return;
         }
@@ -105,13 +105,24 @@ public class EnemyGenerator : MonoBehaviour {
     {
         Vector3 pos;
         DonutController tempDonut;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         for(int i = 0; i < num; i++)
         {
             pos = new Vector3(Random.Range(0, GameManager.Instance.BoardWidth),
             3.5f,
             Random.Range(0, GameManager.Instance.BoardHeight));
 
-            //create a donute
+            //Check that position is not close to player
+            if (player != null)
+            {
+                if (IsNearPlayer(pos, player.transform.position))
+                {
+                    pos.x += 5;
+                    pos.z += 5;
+                }
+            }
+
+            //create a donut
             tempDonut = _pool.Get(pos, Quaternion.identity, this.transform) as DonutController;
 
             //make sure we know when the donut dies
@@ -126,6 +137,25 @@ public class EnemyGenerator : MonoBehaviour {
     {
         if(GameManager.Instance != null)
             GameManager.Instance.OnLevelChanged -= HandleChangeLevel;
+    }
+
+    /// <summary>
+    /// Checks if the pos is close to the player 
+    /// </summary>
+    /// <param name="pos"></param>
+    /// <returns></returns>
+    private bool IsNearPlayer(Vector3 pos, Vector3 playerPos)
+    {
+
+
+        if (Mathf.Abs(pos.x - playerPos.x) < 5)
+            return true;
+
+        if (Mathf.Abs(pos.z - playerPos.z) < 5)
+            return true;
+
+        return false;
+
     }
 
     private void HandleDonutDeath()

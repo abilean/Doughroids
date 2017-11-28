@@ -103,6 +103,12 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public Action<bool> OnGamePausedChg = delegate { };
 
+    /// <summary>
+    /// The current player in the game
+    /// GameObject = player gameobject
+    /// </summary>
+    public Action<GameObject> OnPlayerCreated = delegate { };
+
 
     protected GameManager()
     {
@@ -142,7 +148,7 @@ public class GameManager : Singleton<GameManager>
             OnPlayerDied();
         StartCoroutine(ChangeLevel(0, 2f));
 
-        Score = 0;
+        
     }
 
     /// <summary>
@@ -163,6 +169,7 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void StartNewGame()
     {
+        Score = 0;
         Level = 1;
     }
 
@@ -189,6 +196,15 @@ public class GameManager : Singleton<GameManager>
 
         if (OnGamePausedChg != null)
             OnGamePausedChg(false);
+    }
+
+
+    public void CreatedNewPlayer(GameObject player)
+    {
+        if(player != null && OnPlayerCreated != null)
+        {
+            OnPlayerCreated(player);
+        }
     }
 
 

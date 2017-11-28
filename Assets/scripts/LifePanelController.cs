@@ -11,11 +11,8 @@ public class LifePanelController : MonoBehaviour {
     private List<Image> _lifeMarkers;
 
     /// <summary>
-    /// The player
+    /// Health component for the player
     /// </summary>
-    [SerializeField]
-    private GameObject Player;
-
     private IHealth _player;
 
     [SerializeField]
@@ -31,7 +28,7 @@ public class LifePanelController : MonoBehaviour {
 
 
 
-        GameManager.Instance.OnLevelChanged += HandleLevelChange;
+        GameManager.Instance.OnPlayerCreated += HandlePlayerCreated;
 
 
         SetBlank();
@@ -43,25 +40,21 @@ public class LifePanelController : MonoBehaviour {
 	}
 
     /// <summary>
-    /// Checks if a new game starts to set life
-    /// clears life on Main menu
+    /// When the player is created get the new Ihealth and set life counters
     /// </summary>
-    /// <param name="lvl"></param>
-    private void HandleLevelChange(int lvl)
+    /// <param name="player">The gameobject for the player</param>
+    private void HandlePlayerCreated(GameObject player)
     {
-        if(lvl == 1)
+        if (player != null)
         {
-            if (_player == null)
+            _player = player.GetComponent<IHealth>();
+            if (_player != null)
             {
-                _player = Player.GetComponent<IHealth>();
                 _player.OnHealthChg += SetLife;
+
+
+                SetLife(_player.CurrentHp);
             }
-
-
-            SetLife(_player.CurrentHp);
-        }else if(lvl == 0)
-        {
-            SetBlank();
         }
     }
 
@@ -105,13 +98,6 @@ public class LifePanelController : MonoBehaviour {
 
     private void OnDestroy()
     {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.OnLevelChanged -= HandleLevelChange;
-        }
-        if(_player != null)
-        {
-            _player.OnHealthChg -= SetLife;
-        }
+
     }
 }
